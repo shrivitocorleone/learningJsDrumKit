@@ -1,15 +1,14 @@
 
 //to check which button is clicked
-for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
-  document.querySelectorAll(".drum")[i].addEventListener("click", function() {
-    var buttonInnerHTML = this.innerHTML;  //to see which button was pressed
-    makeSound(buttonInnerHTML);
-    buttonAnimation(buttonInnerHTML);
-  });
+$(".drum").click(function(){
+  var buttonInnerHTML = this.innerHTML;
+  makeSound(buttonInnerHTML);
+  buttonAnimation(buttonInnerHTML);
 }
+)
 
 //to check which keyboard key is pressed
-document.addEventListener("keydown", function(event) {
+$(document).keydown(function(event) {
   makeSound(event.key);
   buttonAnimation(event.key);
 });
